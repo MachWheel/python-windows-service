@@ -1,24 +1,40 @@
-# Prerequisites:
-```pip3 install pywin32 pyinstaller```
+# 1. Setup
+Use Python 3.9 to avoid `pywin32` known bugs:
+```
+py -m pip install virtualenv
+py -m venv venv
+.\venv\Scripts\activate
+pip install -r requirements.txt
+```
 
-# Build:
-```pyinstaller --onefile --runtime-tmpdir=. --hidden-import win32timezone my_test_service.py```
+# 2. Build
+```
+pyinstaller --onefile --runtime-tmpdir=. --hidden-import win32timezone main.py --name my-service
+```
 
-# With Administrator privilges
-# Install:
-```my_test_service.exe install```
+# 3. Run as administrator
 
-# Start:
-```my_test_service.exe start```
+- Install:
+```
+my-service.exe install
+```
 
-# Install with autostart:
-```my_test_service.exe --startup delayed install```
+- Start:
+```
+my-service.exe start
+```
 
-# Debug:
-```my_test_service.exe debug```
+- Stop:
+```
+my-service.exe stop
+```
 
-# Stop:
-```my_test_service.exe stop```
+- Uninstall:
+```
+my-service.exe remove
+```
 
-# Uninstall:
-```my_test_service.exe remove```
+- Debug:
+```
+my-service.exe debug
+```
