@@ -7,7 +7,6 @@ class MyService:
     """
     -> Modify the 'run' method to implement your service
     """
-
     running: bool
 
     def stop(self):
@@ -21,7 +20,7 @@ class MyService:
         """
         self.running = True
         while self.running:
-            # [your service logic goes here]
+            # [YOUR LOGIC GOES HERE]
             time.sleep(30)
             servicemanager.LogInfoMsg("My Test Service is running!")
             time.sleep(30)

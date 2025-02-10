@@ -1,7 +1,7 @@
 import win32service
 import win32serviceutil
 
-from service import MyService
+from .service import MyService
 
 
 class WindowsService(win32serviceutil.ServiceFramework):

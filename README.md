@@ -7,13 +7,24 @@ py -m venv venv
 pip install -r requirements.txt
 ```
 
-# 2. Build
+# 2. Build 
+- As one `.exe` file: *will run as two processes*
 ```
 pyinstaller --onefile --runtime-tmpdir=. --hidden-import win32timezone main.py --name my-service
 ```
 
-# 3. Run as administrator
+- As one folder: *will run as one process*
+```
+pyinstaller --runtime-tmpdir=. --hidden-import win32timezone main.py --name my-service
+```
 
+# 3. Install and start the service:
+Place `_bat_scripts/install_service.bat` in the same folder as the generated `.exe` then double click it.
+
+# 4. Stop and remove the service:
+Place `_bat_scripts/remove_service.bat` in the same folder as the generated `.exe` then double click it.
+
+# Service commands *(run as admin)*
 - Install:
 ```
 my-service.exe install

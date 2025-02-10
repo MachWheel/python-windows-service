@@ -14,13 +14,13 @@ import sys
 import servicemanager  # noqa; For logging to the Windows Event Viewer
 import win32serviceutil  # For the ServiceFramework and command-line helper
 
-from service_framework import WindowsService
-from service_config import configure_service
+from service import WindowsService
+from service.config import configure_service
 
 
 def init():
     """
-    Entry point for the script.
+    Entry point for the service.
     - If called with no arguments, assume Windows is starting the service.
     - If called with arguments (install, start, stop, etc.), we pass them
       through to `win32serviceutil.HandleCommandLine`.
