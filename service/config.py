@@ -12,7 +12,7 @@ def configure_service():
 
     -> Where to tweak failure/recovery actions:
        The 'failure_actions' dictionary sets how the service recovers.
-       By default, it automatically restarts the service after 5 minutes
+       By default, it automatically restarts the service after 1 minute
        on first, second, and subsequent failures.
        Change the (ActionType, Delay) tuples or 'ResetPeriod' to suit your needs.
     """
@@ -61,9 +61,9 @@ def configure_service():
                 'RebootMsg': '',    # Only used if SC_ACTION_REBOOT
                 'Command': '',      # Only used if SC_ACTION_RUN_COMMAND
                 'Actions': [
-                    (win32service.SC_ACTION_RESTART, 300000),  # 1st failure
-                    (win32service.SC_ACTION_RESTART, 300000),  # 2nd failure
-                    (win32service.SC_ACTION_RESTART, 300000),  # Subsequent
+                    (win32service.SC_ACTION_RESTART, 60000),  # 1st failure
+                    (win32service.SC_ACTION_RESTART, 60000),  # 2nd failure
+                    (win32service.SC_ACTION_RESTART, 60000),  # Subsequent
                 ]
             }
 
